@@ -1,23 +1,203 @@
 1) To generate ssh key using command line in and set up SSH key in github  :-
-a) open gitbash and run below command and change your mail id:-
-   ssh-keygen -t rsa -b 4096 -C "jha.rahul906@gmail.com"
-   just press enter 3 times  then 
-   It will generate the public key in  c/Users/rahul/.ssh/id_rsa.pub.
-   Open it notepad++ and copy below content of file(below are example and format of key)
+	a) open gitbash and run below command and change your mail id:-
+	   ssh-keygen -t rsa -b 4096 -C "jha.rahul906@gmail.com"
+	   just press enter 3 times  then 
+	   It will generate the public key in  c/Users/rahul/.ssh/id_rsa.pub.
+	   Open it notepad++ and copy below content of file(below are example and format of key)
 
    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDpc5+gIZd20G8njTASZ8IZ+2Vy0JshLmA0Xo3aYRT1IU2ztRS3bA+oFdpgBgAv8H46sgUhbmVQ9SFte1hx9bZ7mjwgnApkkzLJOF4YrnYY7QpTMvVHo4xcx/xs9lnSAiKmr6THcgUgZsTCdvIfxV1NjywnXO2Ik9kq2qctzwphacdIo0Dp1oV3/oNgSQUZJobYObyXPE6vAPy482IoNy0DejshmwD7uax22nzQ8v8LWT9yQdoM/SdeM6vhpKf+0ErCYP6ETLY2vWReznGob5p01ReY4TjrzL8bgC2pJVR9fzvKB0giwum2zh6HuSkns2HHtXfw1QNNkVjVydHJjIqehFv/ob/qI0UCMXFMdjBUvge79HENus/SQRBdddyzoKYO3DYNDMXQkmPYJMjY/A/ha2XujZchUGuzvzH4KqF8PkVfGuam8LLtnn3mq8bmS+4YCzn/F7GUh8067MRY+7dznK7BxBwuql6cqRQhhhGC2EbcjGzeJJtUSbUfLgk9l0CCBHdVpgR4CNeO2RrVUoIk4CA4xHbhTVCB1hRtv1f7FHrsxd5Z4JT8oDd3K/pMelbZg7tREjAfANL1zMkhpnmFFpf52ZBPPp3tnG5SmGemdSu6suULqKXtEBQNACnUFmo4+HTT9fMIoKItUxvnJ92Mz97T+XW79IKQfHoDJWaqsw== jha.rahul906@gmail.com
 
 
-b)Now login to github accout then go to setting --> SSH and GPG key->click on new SSH key.
-keep some title like key and then paste your key as generated in id_rsa.pub file and save it.
+	b)Now login to github accout then go to setting --> SSH and GPG key->click on new SSH key.
+	keep some title like key and then paste your key as generated in id_rsa.pub file and save it.
+
+	Note :- please dont generate rsa key again and again. so it will update the key in id_rsa.pub. so from next time it wont work and exception will come like below:-
+	git@github.com: Permission denied (publickey).
+	fatal: Could not read from remote repository.
+
+	Please make sure you have the correct access rights
+	and the repository exists.
+
+2) Create a new local repository
+	git init
+	Usage: git init [repository name]
+	This command is used to start a new repository.
+3) git clone
+	Usage: git clone [url]  
+	This command is used to obtain a repository from an existing URL.
+4)	git add
+	Usage: git add [file]  
+	This command adds a file to the staging area.
+	
+	Usage: git add *  
+	This command adds one or more to the staging area.
+	
+	usage:- git add -A	
+	Add all new and changed files to the staging area
+	
+5) git commit
+	Usage: git commit -m “[ Type in the commit message]”  
+	This command records or snapshots the file permanently in the version history.
+    Usage: git commit -a  
+	This command commits any files you’ve added with the git add command and also commits any files you’ve changed since then.
+5) git diff
+	Usage: git diff  
+	This command shows the file differences which are not yet staged.
+	Usage: git diff –staged 
+	This command shows the differences between the files in the staging area and the latest version present.
+    Usage: git diff [first branch] [second branch]  
+	This command shows the differences between the two branches mentioned.
+6) git reset
+	Usage: git reset [file]  
+	This command unstages the file, but it preserves the file contents.
+	Usage: git reset [commit]  ex :- commit no:- 099bnbv3jr3hj3
+	This command undoes all the commits after the specified commit and preserves the changes locally.
+    Usage: git reset –hard [commit]  This command discards all history and goes back to the specified commit.
+7) git status
+	Usage: git status  
+	This command lists all the files that have to be committed.
+	
+8) git rm
+Usage: git rm [file]  
+
+This command deletes the file from your working directory and stages the deletion.
+
+9) git log
+Usage: git log  
+
+This command is used to list the version history for the current branch.
+Usage: git log –follow[file]  
+This command lists version history for a file, including the renaming of files also.
+
+10)git show
+Usage: git show [commit]  
+
+This command shows the metadata and content changes of the specified commit.
+
+11)git tag
+Usage: git tag [commitID]  
+
+This command is used to give tags to the specified commit.
+
+12)git branch
+Usage: git branch  
+This command lists all the local branches in the current repository.
+
+Usage: git branch [branch name]  
+This command creates a new branch.
+
+Usage: git branch -d [branch name]  
+This command deletes the feature branch.
+
+13)git checkout -- <filename>
+Undo local changes:-If you mess up, you can replace the changes in your working tree with the last content in head:
+Changes already added to the index, as well as new files, will be kept.
+git checkout
+Usage: git checkout [branch name]  
+This command is used to switch from one branch to another.
+
+Usage: git checkout -b [branch name]  
+This command creates a new branch and also switches to it.
+
+14)git merge
+Usage: git merge [branch name]  
+This command merges the specified branch’s history into the current branch.
+
+15)git remote
+Usage: git remote add [variable name] [Remote Server Link]  
+This command is used to connect your local repository to the remote server.
+
+Usage- git remote -v
+List all currently configured remote repositories:
 
 
-Note :- please dont generate rsa key again and again. so it will update the key in id_rsa.pub. so from next time it wont work and exception will come like below:-
-git@github.com: Permission denied (publickey).
-fatal: Could not read from remote repository.
+15)git push
+Usage: git push [variable name] master  
+This command sends the committed changes of master branch to your remote repository.
 
-Please make sure you have the correct access rights
-and the repository exists.
+Usage: git push [variable name] [branch]  
+This command sends the branch commits to your remote repository.
 
+Usage: git push –all [variable name]  
+This command pushes all branches to your remote repository.
+
+Usage: git push [variable name] :[branch name]  
+This command deletes a branch on your remote repository.
+
+--variable name= --origin or --all
+
+16)git pull
+Usage: git pull [Repository Link]  
+This command fetches and merges changes on the remote server to your working directory.
+
+17)git stash
+Usage: git stash save  
+This command temporarily stores all the modified tracked files.
+
+Usage: git stash pop  
+This command restores the most recently stashed files.
+
+Usage: git stash list  
+This command lists all stashed changesets.
+
+git stash clear	:-Remove all stashed entries
+
+Usage: git stash drop  
+This command discards the most recently stashed changeset.
+
+
+18)search
+git grep "foo()"
+
+19)git fetch origin
+git reset --hard origin/master
+Instead, to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it, do this:
+
+20)git config --global user.name "Sam Smith"
+git config --global user.email sam@example.com
+Configure the author name and email address to be used with your commits.
+Note that Git strips some characters (for example trailing periods) from user.name.
+
+
+interview question asked in various comapny on google:-
+
+1)  What does commit object contain?
+
+a)      A set of files, representing the state of a project at a given point of time
+b)      Reference to parent commit objects
+c)      An SHAI name, a 40 character string that uniquely identifies the commit object.
+
+2)What is ‘head’ in git and how many heads can be created in a repository?
+
+A ‘head’ is simply a reference to a commit object. In every repository, there is a default head referred as “Master”.  A repository can contain any number 
+
+3)What is the difference between the ‘git diff ’and ‘git status’?
+
+‘git diff’ is similar to ‘git status’, but it shows the differences between various commits and also between the working directory and index.
+
+4)What is the function of ‘git stash apply’?
+
+When you want to continue working where you have left your work, ‘git stash apply’ command is used to bring back the saved changes onto the working directory.
+
+5)Merge and Rebase are two strategies available in Git to combine two ( or more) branches into one branch.
+
+Let’s say we have two branches feature1 and feature2 that have diverged from a common commit “a” to have four commits each.
+Now we want to combine both the features into a single branch. Merge and Rebase are our options. Let’s see what each of them can do.
+
+git merge:-
+Merge will seem like a fairly obvious thing, if you look at the end result. It is pretty much like taking two threads and tying them up in a knot.
+Here the commit ‘b’, has the information regarding all the commits in feature1 and feature2. So, Merge preserves the history of the repository.
+
+Git Rebase:
+
+Rebase on the other hand doesn’t preserve the history. It quite literally re-bases one branch on top of the other i.e., it changes the base of the branch. Let’s see rebasing with the same example.
+
+Let’s say I want to rebase feature1 onto feature2, what that means is that I want all the commits in the branch feature1 on top of the commits of feature2. So, after rebase your commit history would look like the following.
+
+
+
+
+
+	
 
 
