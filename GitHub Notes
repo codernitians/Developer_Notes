@@ -1,0 +1,23 @@
+1) To get the generate ssh key in github  :-
+open gitbash and run below command and change your mail id:-
+ssh-keygen -t rsa -b 4096 -C "jha.rahul906@gmail.com"
+just press enter 3 times  then 
+It will generate the public key in  c/Users/rahul/.ssh/id_rsa.pub.
+Open it notepad++ and copy below content of file(below are example and format of key)
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDpc5+gIZd20G8njTASZ8IZ+2Vy0JshLmA0Xo3aYRT1IU2ztRS3bA+oFdpgBgAv8H46sgUhbmVQ9SFte1hx9bZ7mjwgnApkkzLJOF4YrnYY7QpTMvVHo4xcx/xs9lnSAiKmr6THcgUgZsTCdvIfxV1NjywnXO2Ik9kq2qctzwphacdIo0Dp1oV3/oNgSQUZJobYObyXPE6vAPy482IoNy0DejshmwD7uax22nzQ8v8LWT9yQdoM/SdeM6vhpKf+0ErCYP6ETLY2vWReznGob5p01ReY4TjrzL8bgC2pJVR9fzvKB0giwum2zh6HuSkns2HHtXfw1QNNkVjVydHJjIqehFv/ob/qI0UCMXFMdjBUvge79HENus/SQRBdddyzoKYO3DYNDMXQkmPYJMjY/A/ha2XujZchUGuzvzH4KqF8PkVfGuam8LLtnn3mq8bmS+4YCzn/F7GUh8067MRY+7dznK7BxBwuql6cqRQhhhGC2EbcjGzeJJtUSbUfLgk9l0CCBHdVpgR4CNeO2RrVUoIk4CA4xHbhTVCB1hRtv1f7FHrsxd5Z4JT8oDd3K/pMelbZg7tREjAfANL1zMkhpnmFFpf52ZBPPp3tnG5SmGemdSu6suULqKXtEBQNACnUFmo4+HTT9fMIoKItUxvnJ92Mz97T+XW79IKQfHoDJWaqsw== jha.rahul906@gmail.com
+
+
+now login to github accout then go to setting --> SSH and GPG key->click on new SSH key.
+keep some title like abc and then paste your key as generated in id_rsa.pub file and save it.
+
+
+Note :- please dont generate rsa key again and again. so it will update the key in id_rsa.pub. so from next time it wont work and exception will come like below:-
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+
+
