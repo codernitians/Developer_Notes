@@ -1,1 +1,177 @@
+soapUrl=http://34.236.109.151:8000/ws/bankdetails.wsdl 
+soapDefaultUri=http://34.236.109.151:8000/ws/ 
+contextPath=com.pivotal.customer.bankservice
+spring.datasource.driver-class-name=${vcap.services.MysqlDb.credentials.spring.datasource.driver}
+spring.datasource.password=${vcap.services.MysqlDb.credentials.spring.datasource.password}
+spring.datasource.url=${vcap.services.MysqlDb.credentials.spring.datasource.url}
+spring.datasource.username=${vcap.services.MysqlDb.credentials.spring.datasource.username}
+
+
+#server properties
+server.port=1011
+spring.cloud.config.uri=http://localhost:8888 
+#database connection properties
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3307/learning
+spring.datasource.username=root
+spring.datasource.password=12345
+spring.datasource.initialization-mode=always
+spring.main.allow-bean-definition-overriding=true
+
+server.error.whitelabel.enabled=false
+#spring.datasource.username=stargate
+#spring.datasource.password=stargate
+#spring.datasource.url=jdbc:mysql://34.236.109.151:3306/stargate_pcf?useSSL=false
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.datasource.initialization-mode=always
+ 
+
+
+spring.cloud.config.server.git.uri=
+
+#security properties
+spring.security.user.name=rahul
+spring.security.user.password=rahul@123
+
+
+#JPA
+spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create-drop
+
+
+
+#rabbit MQ
+spring.rabbitmq.host = localhost
+spring.rabbitmq.port = 5672
+spring.rabbitmq.username = guest
+spring.rabbitmq.password = guest
+
+
+
+#eurka properties
+eureka.client.service-url.defaultZone=https://stargateeurekaserver.apps.cgpcfonaws.org/
+eureka.client.fetch-registry=true 
+eureka.client.register-with-eureka=true
+
+
+cf create-user-provided-service my-db-mine -p "username, password"
+cf create-user-provided-service my-db-mine -p /path/to/credentials.json
+cf create-user-provided-service my-drain-service -l syslog://logs7.papertrailapp.com:37798
+cf create-user-provided-service my-route-service -r https://example.com
+
+
+#logging prioperties
+logging.level.org.org.springframework.web=ERROR
+logging.level.com.com.pivotal.customer=debug
+
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>\
+
+ 
+Uploads and stores app files 
+Examines and stores app metadata 
+Creates a “droplet” (the Cloud Foundry unit of execution) for the app 
+Selects an appropriate Diego cell to run the droplet 
+Starts the app 
+
+
+cf create-service serviname plan {service-instance}
+cf bind-service app-name serviceinstance
+cf unbind-service app-name serviceinstance
+mark it as done once completed
+
+
+
+cf cups instancename
+cf create-user-provided-service instancename
+cf cups -help
+
+
+ 
+step1:- map blue app to green
+
+step2:- check by hitting blue app uri u should see blue nd green
+
+step3:- unmap blue route in blue app and green route in green app 
+
+step4:- u should now see in green app there is blue route in routes tab 
+
+step5:- hit blue endpoint u should see only green response
+
+
+
+Restart your application to refresh the application’s environment after actions such as binding a new service to the
+ application or setting an environment variable that only the application consumes. However, if your environment 
+ variable is consumed by the buildpack in addition to the application, then you must restage the application for 
+ the change to take effect.
+
+Restaging your application stops your application and restages it, by compiling a new droplet and starting it.
+
+Restage your application if you have changed the environment in a way that affects your staging process,
+ such as setting an environment variable that the buildpack consumes. The staging process has access to environment variables,
+ so the environment can affect the contents of the droplet.
+
+Restaging your application compiles a new droplet from your application without updating your application source. 
+If you must update your application source,
+ re-push your application by following the steps in the section above.
+ 
+cf set-org-role sagar.satunkar@capgemini.com pcf.learning-org OrgManager 
+rahul.d.jha@capgemini.com 
+cf push MyfirstProject123 -p D:\rahul\workspace\firstSpringProject\target\firstSpringProject-0.0.1-SNAPSHOT.jar -b https://github.com/cloudfoundry/java-buildpack.git
+cf set-env MyfirstProject123 msg hello
+cf restage MyfirstProject123
+cf env MyfirstProject123
+cf unset-env MyfirstProject123 msg
+cf env MyfirstProject123
+
+
+cf create-app-manifest MyfirstProject123 -p ./Manifest.yml
+
+cf push customerrInformation -f ./dev-manifest.yml -p D:\rahul\workspace\firstSpringProject\target\firstSpringProject-0.0.1-SNAPSHOT.jar -b https://github.com/cloudfoundry/java-buildpack.git
+cf push customerInformation -p D:\rahul\workspace\CustomerInformation\target\CustomerInformation-0.0.1-SNAPSHOT.jar -b https://github.com/cloudfoundry/java-buildpack.git
+
+cf create-app-manifest MyfirstProject123 -p ./dev-manifest.yml
+
+
+logs7.papertrailapp.com:51589
+logs7.papertrailapp.com:37798
+
+
+
+cf create-user-provided-service my-db-mine -p "username, password"
+cf create-user-provided-service my-db-mine -p /path/to/credentials.json
+cf create-user-provided-service my-drain-service -l syslog://logs7.papertrailapp.com:37798
+cf create-user-provided-service my-route-service -r https://example.com
+
+[‎1/‎4/‎2019 3:28 PM]  Sanagapalli, Anurag:  
+we are going to consume below wsdl file irrespective of userstories..
+
+http://34.236.109.151:8000/ws/bankdetails.wsdl 
+for reference u can refer this url 
+
+https://memorynotfound.com/spring-ws-consume-soap-service-wsdl/ 
+
+
+ 
+
+
+step1: use jaxb dependency and consume wsdl. It will generate all the req classes
+
+step2: config the beans marshalling and unmarshalling 
+
+step3: consume one endpoint in developed code..... and return the response..
+
+
+
+        MyFirstGitHub/application.properties
+      
+
+
+
+ 
+
+logging.pattern.console= "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+# Logging pattern for file
+logging.pattern.file= "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+logging.file=D:\\rahul\\workspace\\CustomerInformation\\log\\application.log
 
