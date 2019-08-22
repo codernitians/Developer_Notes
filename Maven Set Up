@@ -1,0 +1,12 @@
+Step 1: Download Maven
+http://maven.apache.org/download.cgi is the link to download Maven. ANT and Maven both are by Apache Software Foundation.
+
+Click and download the ‘Binary Zip’ (Ex: apache-maven-3.1.0-bin.zip) file from the ‘current stable’ version.
+
+Step 2: Install Maven
+Maven does not uses an executable file to install. It is just a zip file. Just unzip it to a folder in the hard disk.
+
+Step 3: Setup Maven
+1. Add environment variable MAVEN_HOME to the path where you extracted the maven binary zip file.
+
+2. Add path variable, so that we can execute ‘mvn’ command from any location in command prompt.
