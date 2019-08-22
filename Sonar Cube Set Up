@@ -1,0 +1,69 @@
+1)Install JVM on your machine
+2)Download sonar server from https://www.sonarqube.org/downloads/ 7.3
+3)Download Download “SonarQube-Scanner” https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner
+4)Configure maven or gradle to build your project.
+5 )Add “Environmental Variable”  of both file till bin folder in environment settings. in unix or linux set using export variable.
+2)extract and go to bin C:\Users\rahul\Downloads\sonarqube-7.3\bin\windows-x86-64
+3) click on StartSonar.bat
+4) http://localhost:9000
+5) by deafult user name and password is admin and admin
+6)o create a project in SonarQube:
+Log in to SonarQube.
+Generate an authentication token. Save the resulting token in a safe place. 
+You will need it later to connect your project to SonarQube.
+Navigate to the “Administration -> Projects -> Management” section.
+go to  Analyze a project
+Generate an authentication token.
+Save the resulting token in a safe place. 
+click on genrate then continue button then 
+What is your project's main language? select 
+You are developing primarily in Java: what is your build technology?
+Maven or Gradle select any one..
+then 
+Execute the Scanner for Maven from your computer
+Running a SonarQube analysis with Maven is straighforward. You just need to run the following command in your project's folder.
+mvn sonar:sonar \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=8e3148e19dcabae3536dc5f4d7941f10a3198e99
+
+You will need it later to connect your project to SonarQube.
+
+
+Setup for Sonarqube-Scanner
+Go to your project folder which you want to scan.
+
+Create one new file inside your project's root folder path with name “sonar-project”. The extension of the file will be “.properties”.
+
+sonar-project.properties
+
+Add the following basic configurations inside “sonar-project.properties” file.
+sonar.projectKey=config_key
+sonar.projectName=conig_server
+sonar.sourceEncoding=UTF-8
+sonar.sources=src
+sonar.exclusion=
+sonar.java.binaries = target/classes //note add  this properties
+
+
+sonar.projectKey="any unique name"
+sonar.projectName="any unique name"
+sonar.sourceEncoding=UTF-8
+sonar.sources="list of folders which will scan"
+sonar.exclusion="list of folders which will exclude from scan"
+
+“sonar.sources” & “sonar.exclusion” property values will be the list of folders or files which you wants to scan or exclude from scan. The list must be separated by comma(,). If you want to include all files or folders, then just mention Dot(.)
+Maven set up:-
+
+Step 1: Download Maven
+http://maven.apache.org/download.cgi is the link to download Maven. ANT and Maven both are by Apache Software Foundation.
+
+Click and download the ‘Binary Zip’ (Ex: apache-maven-3.1.0-bin.zip) file from the ‘current stable’ version.
+
+Step 2: Install Maven
+Maven does not uses an executable file to install. It is just a zip file. Just unzip it to a folder in the hard disk.
+
+Step 3: Setup Maven
+1. Add environment variable MAVEN_HOME to the path where you extracted the maven binary zip file.
+
+2. Add path variable, so that we can execute ‘mvn’ command from any location in command prompt.
+
