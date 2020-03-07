@@ -1,3 +1,5 @@
+
+https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
 1) To generate ssh key using command line in and set up SSH key in github  :-
 	a) open gitbash and run below command and change your mail id:-
 	   ssh-keygen -t rsa -b 4096 -C "jha.rahul906@gmail.com"
